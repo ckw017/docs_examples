@@ -18,6 +18,16 @@ class HelloWorld:
         time.sleep(90)
         return msg
     
+    @app.get("/slowbro")
+    def hello(self):
+        time.sleep(300)
+        return msg
+    
+    @app.get("/slowking")
+    def hello(self):
+        time.sleep(1800)
+        return msg
+    
     @app.get("/healthcheck")
     def healthcheck(self):
         return
