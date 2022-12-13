@@ -1,5 +1,6 @@
 from fastapi import FastAPI
 from ray import serve
+import time
 import os
 
 # Use this var to test service inplace update. When the env var is updated, users see new return value.
@@ -14,6 +15,7 @@ app = FastAPI()
 class HelloWorld:
     @app.get("/")
     def hello(self):
+        time.sleep(30)
         return msg
     
     @app.get("/healthcheck")
