@@ -15,7 +15,17 @@ app = FastAPI()
 class HelloWorld:
     @app.get("/")
     def hello(self):
-        time.sleep(30)
+        time.sleep(90)
+        return msg
+    
+    @app.get("/slowpoke")
+    def hello(self):
+        time.sleep(300)
+        return msg
+    
+    @app.get("/slowking")
+    def hello(self):
+        time.sleep(60 * 30)
         return msg
     
     @app.get("/healthcheck")
